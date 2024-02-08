@@ -1,0 +1,78 @@
+\documentclass[12pt,oneside,draft]{memoir}
+
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage{marvosym}
+
+\usepackage{xeCJK}
+\setCJKmainfont{標楷體}
+\setmainfont{TeX Gyre Termes}
+
+\newcounter{rocyear} % 民國紀年
+\setcounter{rocyear}{\the\year-1911}
+\newcounter{schoolyear} % 學年度
+\setcounter{schoolyear}{\therocyear-1}
+\newcommand{\schoolyear}[1]{\setcounter{schoolyear}{#1}} % 設定學年度為使用者指定的年份
+\newcounter{subject} % 科別：用數值表示，1~6 分別代表：數學、物理、化學、生物、地球科學、資訊
+\newcommand{\subject}[1]{\setcounter{subject}{#1}} % 設定科別對應使用者指定的編號
+\newcommand{\checkbox}[1]{\ifthenelse{#1=\thesubject}{\Checkedbox}{\HollowBox}} % 生成一個核取方塊
+
+\setlrmarginsandblock{2cm}{2cm}{*}
+\setulmarginsandblock{2cm}{2cm}{*}
+\checkandfixthelayout
+
+\settowidth{\parindent}{　　}
+
+\pretitle{\begin{flushleft}\Large 作品名稱：}
+\posttitle{\end{flushleft}}
+\preauthor{\begin{flushleft}\Large 作者：}
+\postauthor{\end{flushleft}}
+\predate{\begin{center}\Large}
+\postdate{\end{center}}
+
+\renewcommand{\maketitlehooka}{%
+	\begin{center}
+	\huge \theschoolyear 學年度\\
+	\LARGE 高級中等學校科學班學生個別科學研究成果報告\\
+	\end{center}
+	\vfill\vfill
+}
+\renewcommand{\maketitlehookb}{\vfill}
+\renewcommand{\maketitlehookc}{%
+	\vfill
+	\begin{center}\Large
+	\begin{tabularx}{\textwidth}{|c|XXXXlX|}
+	\hline
+	&&&&&&\\
+	　\!科別\!　 & \checkbox{1} 數學 & \checkbox{2}物理 & \checkbox{3}化學 & \checkbox{4}生物 & \checkbox{5}地球科學 & \checkbox{6}資訊\\
+	&&&&&&\\
+	\hline
+	\end{tabularx}
+	\end{center}
+	\vfill
+	\begin{center}\Large
+	\begin{tabularx}{\textwidth}{||c||X||}
+	\hline\hline
+	&\\
+	作品編號 & \\
+	&\\
+	\hline\hline
+	\end{tabularx}
+	\end{center}
+	\vfill\vfill
+}
+
+\title{具有最大面積的交圓內接三角形}
+\author{劉慶軒}
+\date{中 \hfill 華 \hfill 民 \hfill 國 \hfill \therocyear \hfill 年 \hfill \the\month \hfill 月 \hfill \the\day \hfill 日}
+\subject{1}
+
+\indentafterchapter
+
+\begin{document}
+
+\begin{titlingpage}
+\maketitle
+\end{titlingpage}
+
+\end{document}
