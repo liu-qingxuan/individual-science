@@ -5,6 +5,7 @@
 \usepackage{marvosym}
 
 \usepackage[provide=*]{babel}
+\setlocalecaption{chinese-hant}{bib}{參　考　文　獻}
 \setlocalecaption{chinese-hant}{contents}{目　錄}
 
 \usepackage{xeCJK}
@@ -77,6 +78,8 @@
 \indentafterchapter
 \chapterstyle{tandh}
 
+\nobibintoc
+
 \begin{document}
 
 \frontmatter
@@ -89,6 +92,15 @@
 
 \mainmatter
 
+\include{chap1}
+\include{chap2}
+\include{chap3}
+\include{chap4}
+\include{chap5}
+
 \backmatter
+
+\bibliographystyle{plain}
+\bibliography{triangleincycles}
 
 \end{document}
