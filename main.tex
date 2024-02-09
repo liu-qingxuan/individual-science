@@ -1,15 +1,18 @@
-\documentclass[12pt,oneside,draft]{memoir}
+\documentclass[12pt,oneside,draft,chinese-hant]{memoir}
 
 \usepackage{calc}
 \usepackage{ifthen}
 \usepackage{marvosym}
 
+\usepackage[provide=*]{babel}
+\setlocalecaption{chinese-hant}{contents}{目　錄}
+
 \usepackage{xeCJK}
-\IfFontExistsTF{標楷體}{%
-\setCJKmainfont{標楷體}
-}{%
-\setCJKmainfont{edukai-4.0.ttf}[Path = fonts/]
+\defaultfontfeatures+{
+	BoldFeatures	= {Font = NotoSerifCJKtc-Bold.otf, Path = fonts/, Scale = MatchLowercase} , 
+	ItalicFeatures	= {Font = NotoSansCJKtc-Medium.otf, Path = fonts/, Scale = MatchLowercase}
 }
+\IfFontExistsTF{標楷體}{\setCJKmainfont{標楷體}}{\setCJKmainfont{edukai-4.0.ttf}[Path = fonts/]}
 \setmainfont{TeX Gyre Termes}
 
 \newcounter{rocyear} % 民國紀年
@@ -39,7 +42,7 @@
 	\huge \theschoolyear 學年度\\
 	\LARGE 高級中等學校科學班學生個別科學研究成果報告\\
 	\end{center}
-	\vfill\vfill
+	\vfill\vfill\vfill
 }
 \renewcommand{\maketitlehookb}{\vfill}
 \renewcommand{\maketitlehookc}{%
@@ -48,12 +51,12 @@
 	\begin{tabularx}{\textwidth}{|c|XXXXlX|}
 	\hline
 	&&&&&&\\
-	　\!科別\!　 & \checkbox{1} 數學 & \checkbox{2}物理 & \checkbox{3}化學 & \checkbox{4}生物 & \checkbox{5}地球科學 & \checkbox{6}資訊\\
+	　科別　 & \checkbox{1} 數學 & \checkbox{2}物理 & \checkbox{3}化學 & \checkbox{4}生物 & \checkbox{5}地球科學 & \checkbox{6}資訊\\
 	&&&&&&\\
 	\hline
 	\end{tabularx}
 	\end{center}
-	\vfill
+	\vfill\vfill
 	\begin{center}\Large
 	\begin{tabularx}{\textwidth}{||c||X||}
 	\hline\hline
@@ -72,11 +75,20 @@
 \subject{1}
 
 \indentafterchapter
+\chapterstyle{tandh}
 
 \begin{document}
+
+\frontmatter
 
 \begin{titlingpage}
 \maketitle
 \end{titlingpage}
+
+\tableofcontents*
+
+\mainmatter
+
+\backmatter
 
 \end{document}
