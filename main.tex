@@ -5,7 +5,11 @@
 \usepackage{marvosym}
 
 \usepackage{xeCJK}
+\IfFontExistsTF{標楷體}{%
 \setCJKmainfont{標楷體}
+}{%
+\setCJKmainfont{edukai-4.0.ttf}[Path = fonts/]
+}
 \setmainfont{TeX Gyre Termes}
 
 \newcounter{rocyear} % 民國紀年
