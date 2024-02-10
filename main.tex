@@ -1,8 +1,15 @@
 \documentclass[12pt,oneside,draft,chinese-hant]{memoir}
 
 \usepackage{calc}
+\usepackage{graphicx}
 \usepackage{ifthen}
 \usepackage{marvosym}
+
+\usepackage{hyperref}
+\usepackage{bookmark}
+
+\usepackage{unicode-math}
+\setmathfont{TeX Gyre Termes Math}
 
 \usepackage[provide=*]{babel}
 \setlocalecaption{chinese-hant}{bib}{參　考　文　獻}
@@ -15,6 +22,10 @@
 }
 \IfFontExistsTF{標楷體}{\setCJKmainfont{標楷體}}{\setCJKmainfont{edukai-4.0.ttf}[Path = fonts/]}
 \setmainfont{TeX Gyre Termes}
+
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{definition}{定義}
 
 \newcounter{rocyear} % 民國紀年
 \setcounter{rocyear}{\the\year-1911}

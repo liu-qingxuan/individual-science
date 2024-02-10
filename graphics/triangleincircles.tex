@@ -1,0 +1,28 @@
+\documentclass{standalone}
+
+\usepackage{tkz-euclide}
+
+\usepackage{unicode-math}
+\setmathfont{TeX Gyre Termes Math}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+\tkzDefPoint(-1,0){O_1}
+\tkzDefPoint(1,0){O_2}
+\tkzDefShiftPoint[O_2](240:4){B}
+\tkzDefShiftPoint[O_1](-30:5){C}
+
+\tkzInterCC[R](O_1,5)(O_2,4) \tkzGetFirstPoint{A}
+
+\tkzDrawCircles(O_1,A O_2,B)
+\tkzDrawPolygon(A,B,C)
+\tkzDrawPoints(O_1,O_2,A,B,C)
+
+\tkzLabelPoints(O_1,O_2,B,C)
+\tkzLabelPoints[above](A)
+
+\end{tikzpicture}
+
+\end{document}
